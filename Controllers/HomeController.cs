@@ -85,7 +85,22 @@ namespace project1.Controllers
             return View("task", application);
         }
 
+        [HttpPost]
+        public IActionResult Edit(ApplicationResponse ar)
+        {
+            if (ModelState.IsValid)
+            {
+                arContext.Update(ar);
+                arContext.SaveChanges();
+                return RedirectToAction("TaskList");
+            }
 
+            else
+            {
+                return View(ar);
+            }
+
+        }
 
 
 
