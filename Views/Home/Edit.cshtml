@@ -12,15 +12,15 @@
 
 
         <label asp-for="Task">Task: </label>
-        <input asp-for="Task" type="text" />@Model.Task<br /><br />
+        <input asp-for="Task" type="text" value="@Model.Task"/><br /><br />
 
 
         <label asp-for="DueDate">Due Date: </label>
-        <input asp-for="DueDate" type="date" />@Model.DueDate<br /><br />
+        <input asp-for="DueDate" type="date" value="@Model.DueDate"/><br /><br />
 
 
         <label asp-for="Quadrant">Quadrant: </label><!--This field is required, need to double check with the models to see if that is required-->
-        <input asp-for="Quadrant" type="text" />@Model.Quadrant<br /><br />
+        <input asp-for="Quadrant" type="text" value="@Model.Quadrant"/><br /><br />
 
 
         <label asp-for="CategoryId">Category: </label>
@@ -36,9 +36,9 @@
 
 
         <label asp-for="Completed">Completed (True/False): </label>
-        <input asp-for="Completed" type="text" />@Model.Completed<br /><br />
+        <input asp-for="Completed" type="text" value="@Model.Completed"/><br /><br />
 
-        <input id="btnSend" type="submit" value="Add Task" />
+        <input id="btnSend" type="submit" value="Save Task" />
     </fieldset>
     <div></div>
 </form>
