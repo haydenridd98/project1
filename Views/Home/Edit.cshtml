@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Edit a Task";
+}
+
+@model project1.Models.ApplicationResponse
+
+<form style="text-align: center" method="post">
+    <fieldset>
+        <legend>Task: </legend>
+
+
+
+        <label asp-for="Task">Task: </label>
+        <input asp-for="Task" type="text" />@Model.Task<br /><br />
+
+
+        <label asp-for="DueDate">Due Date: </label>
+        <input asp-for="DueDate" type="date" />@Model.DueDate<br /><br />
+
+
+        <label asp-for="Quadrant">Quadrant: </label><!--This field is required, need to double check with the models to see if that is required-->
+        <input asp-for="Quadrant" type="text" />@Model.Quadrant<br /><br />
+
+
+        <label asp-for="CategoryId">Category: </label>
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryTitle</option>
+            }
+        </select>
+
+        <br /><br />
+
+
+        <label asp-for="Completed">Completed (True/False): </label>
+        <input asp-for="Completed" type="number" />@Model.Completed<br /><br />
+
+        <input id="btnSend" type="submit" value="Add Task" />
+    </fieldset>
+    <div></div>
+</form>
