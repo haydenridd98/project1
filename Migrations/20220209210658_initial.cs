@@ -2,7 +2,7 @@
 
 namespace project1.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,7 +20,7 @@ namespace project1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Responses",
+                name: "responses",
                 columns: table => new
                 {
                     TaskId = table.Column<int>(nullable: false)
@@ -33,9 +33,9 @@ namespace project1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Responses", x => x.TaskId);
+                    table.PrimaryKey("PK_responses", x => x.TaskId);
                     table.ForeignKey(
-                        name: "FK_Responses_Categories_CategoryId",
+                        name: "FK_responses_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "CategoryId",
@@ -63,30 +63,30 @@ namespace project1.Migrations
                 values: new object[] { 4, "Church" });
 
             migrationBuilder.InsertData(
-                table: "Responses",
+                table: "responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
                 values: new object[] { 3, 1, false, "2-11-2022", 2, "Get as swole as Ben" });
 
             migrationBuilder.InsertData(
-                table: "Responses",
+                table: "responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
                 values: new object[] { 1, 2, false, "2-15-2022", 1, "Get Caden a girlfriend" });
 
             migrationBuilder.InsertData(
-                table: "Responses",
+                table: "responses",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
                 values: new object[] { 2, 3, true, "12-31-2022", 2, "Find out how Hayden got so dang cute" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Responses_CategoryId",
-                table: "Responses",
+                name: "IX_responses_CategoryId",
+                table: "responses",
                 column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Responses");
+                name: "responses");
 
             migrationBuilder.DropTable(
                 name: "Categories");

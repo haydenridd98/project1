@@ -8,8 +8,8 @@ using project1.Models;
 namespace project1.Migrations
 {
     [DbContext(typeof(TaskListContext))]
-    [Migration("20220209200432_Initial")]
-    partial class Initial
+    [Migration("20220209210658_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,7 +43,7 @@ namespace project1.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Responses");
+                    b.ToTable("responses");
 
                     b.HasData(
                         new

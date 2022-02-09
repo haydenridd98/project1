@@ -41,7 +41,7 @@ namespace project1.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Responses");
+                    b.ToTable("responses");
 
                     b.HasData(
                         new
