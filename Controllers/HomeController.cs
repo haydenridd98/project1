@@ -32,12 +32,12 @@ namespace project1.Controllers
 
         // we can add the other views right here
 
-        public IActionResult task()
+        public IActionResult Task()
         {
             return View();
         }
 
-        public IActionResult taskList()
+        public IActionResult TaskList()
         {
             return View();
         }

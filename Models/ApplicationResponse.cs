@@ -7,16 +7,22 @@ namespace project1.Models
     {
         //task(string), due date(date), quadrant(string), category(string), completed(bool)
 
-        public int TaskID { get; set; }
-
-        public string Task { get; set; }
+        [Key]
+        [Required]
+        public int TaskId { get; set; }
 
         [Required]
-        public string Quadrant { get; set; }
+        public string Task { get; set; }
 
-        public string Category { get; set; }
+        public string DueDate { get; set; }
 
-        public bool completed { get; set; }
+        [Required]
+        public int Quadrant { get; set; }
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
+        public bool Completed { get; set; }
 
     }
 }
