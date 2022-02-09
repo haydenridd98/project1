@@ -14,13 +14,15 @@
         <input asp-for="Task" type="text" /><br /><br />
 
 
-        <label for="DueDate">Due Date: </label>
-        <input id="DueDate" type="date"/><br /><br />
+        <label asp-for="DueDate">Due Date: </label>
+        <input asp-for="DueDate" type="date"/><br /><br />
 
 
-        <label for="Quadrant">Quadrant: </label><!--This field is required, need to double check with the models to see if that is required-->
-        <input id="Quadrant" type="text"/><br /><br />
+        <label asp-for="Quadrant">Quadrant: </label><!--This field is required, need to double check with the models to see if that is required-->
+        <input asp-for="Quadrant" type="text"/><br /><br />
 
+
+        <label asp-for="CategoryId">Category: </label>
         <select asp-for="CategoryId">
             <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Categories)
@@ -32,8 +34,8 @@
         <br /><br />
 
 
-        <label for="Completed">Completed (True/False): </label>
-        <input id="Completed" type="number"/><br /><br />
+        <label asp-for="Completed">Completed (True/False): </label>
+        <input asp-for="Completed" type="number"/><br /><br />
 
         <input id="btnSend" type="submit" value="Add Task"/>
     </fieldset>
