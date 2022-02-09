@@ -6,6 +6,47 @@
 
 <h1>Welcome to the task list page</h1>
 
+<h2>Temp: Here is a first draft list</h2>
+
+<table class="table table-bordered table-striped">
+
+    <!--task(string), due date(date), quadrant(string), category(string), completed(bool)-->
+    <thead class="bold">
+        <tr>
+            <td>Task</td>
+            <td>Due Date</td>
+            <td>Quadrant</td>
+            <td>Category</td>
+            <td>Completed?</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!--foreach (var x in Model)-->
+    {
+    <tr>
+        <td>x.Task</td>
+        <td>x.DueDate</td>
+        <td>x.Quadrant</td>
+        <td>x.Category</td>
+        <td>x.Completed</td>
+
+
+        <!--<td><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="x.ApplicationID">Edit</a></td>
+        <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="x.ApplicationID">Delete</a></td>-->
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+<br /><br /><br /><br />
+
+
+<h1>Here is the cool layout</h1>
 
 <div class="container">
     <div class="grid-1 callout primary" style="border-style: solid">
