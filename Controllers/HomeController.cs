@@ -78,6 +78,7 @@ namespace project1.Controllers
 
         public IActionResult Edit(int TaskId)
         {
+            ViewBag.Categories = arContext.Categories.ToList();
 
             var application = arContext.responses.Single(x => x.TaskId == TaskId);
 
