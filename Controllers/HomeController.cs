@@ -105,39 +105,6 @@ namespace project1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(ApplicationResponse blah)
-        {
-            arContext.Update(blah);
-            arContext.SaveChanges();
-            return RedirectToAction("taskList");
-        }
-
-        //delete
-        [HttpGet]
-        public IActionResult Delete(int TaskId)
-        {
-            var application = arContext.responses.Single(x => x.TaskId == TaskId);
-            return View(application);
-        }
-        [HttpPost]
-        public IActionResult Delete(ApplicationResponse ar)
-        {
-            arContext.responses.Remove(ar);
-            arContext.SaveChanges();
-            return RedirectToAction("taskList");
-        }
-
-
-
-
-
-
-
-
-
-
-
-        [HttpPost]
         public IActionResult Delete(ApplicationResponse ar)
         {
 
