@@ -14,7 +14,7 @@ namespace project1.Models
 
         }
 
-        public DbSet<ApplicationResponse> Responses { get; set; }
+        public DbSet<ApplicationResponse> responses { get; set; }
 
         public DbSet<Category> Categories { get; set; }
 

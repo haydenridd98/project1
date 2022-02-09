@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using project1.Models;
 using System;
@@ -6,6 +7,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+
+
 namespace project1.Controllers
 {
 
@@ -15,15 +18,15 @@ namespace project1.Controllers
 
     public class HomeController : Controller
     {
-        // don't be intimidated Caden
-        private readonly ILogger<HomeController> _logger;
 
-        // don't worry about this
-        public HomeController(ILogger<HomeController> logger)
+        private TaskListContext arContext { get; set; }
+
+        public HomeController(TaskListContext someName)
         {
-            _logger = logger;
+            arContext = someName;
         }
 
+        
         // access the index page view
         public IActionResult Index()
         {
@@ -32,16 +35,43 @@ namespace project1.Controllers
 
         // we can add the other views right here
 
+
+        [HttpGet]
         public IActionResult Task()
         {
             return View();
         }
 
-        public IActionResult TaskList()
+        [HttpPost]
+        public IActionResult NewMovie(ApplicationResponse ar)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                arContext.Add(ar);
+                arContext.SaveChanges();
+                return View();
+            }
+
+            else
+            {
+                return View(ar);
+            }
+
         }
 
+
+        [HttpGet]
+        public IActionResult TaskList()
+        {
+            var tasks = arContext.responses
+                .Include(x => x.Category)
+                .ToList();
+            return View(tasks);
+        }
+        
+        
+       
+        
 
 
         //I deleted the Privacy Page. It didn't deserve to live. We don't believe in privacy. #IloveElon
