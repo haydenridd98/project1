@@ -108,7 +108,6 @@ namespace project1.Controllers
         public IActionResult Delete(ApplicationResponse ar)
         {
 
-
             arContext.responses.Remove(ar);
             arContext.SaveChanges();
 
