@@ -14,6 +14,7 @@ namespace project1.Models
 
         }
 
+        public static object Category { get; internal set; }
         public DbSet<ApplicationResponse> responses { get; set; }
 
         public DbSet<Category> Categories { get; set; }

@@ -71,10 +71,23 @@ namespace project1.Controllers
                 .ToList();
             return View(tasks);
         }
-        
-        
-       
-        
+
+
+        //Edit functionality
+        [HttpGet]
+
+        public IActionResult Edit(int TaskId)
+        {
+
+            var application = arContext.responses.Single(x => x.TaskId == TaskId);
+
+            return View("task", application);
+        }
+
+
+
+
+
 
 
         //I deleted the Privacy Page. It didn't deserve to live. We don't believe in privacy. #IloveElon
