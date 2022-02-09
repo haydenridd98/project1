@@ -39,11 +39,14 @@ namespace project1.Controllers
         [HttpGet]
         public IActionResult Task()
         {
+            ViewBag.Categories = arContext.Categories.ToList();
+
             return View();
         }
 
+
         [HttpPost]
-        public IActionResult NewMovie(ApplicationResponse ar)
+        public IActionResult Task(ApplicationResponse ar)
         {
             if (ModelState.IsValid)
             {

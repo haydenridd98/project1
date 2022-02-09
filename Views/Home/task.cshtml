@@ -2,37 +2,38 @@
     ViewData["Title"] = "Add a Task";
 }
 
+@model project1.Models.ApplicationResponse
+
 <form style="text-align: center" method="post">
     <fieldset>
         <legend>Task: </legend>
 
         
 
-        <label for="assignments">Task: </label>
-        <input id="assignments" type="text" /><br /><br />
+        <label asp-for="Task">Task: </label>
+        <input asp-for="Task" type="text" /><br /><br />
 
 
-        <label for="groupProjects">Due Date: </label>
-        <input id="groupProjects" type="date"/><br /><br />
+        <label for="DueDate">Due Date: </label>
+        <input id="DueDate" type="date"/><br /><br />
 
 
-        <label for="quizzes">Quadrant: </label><!--This field is required, need to double check with the models to see if that is required-->
-        <input id="quizzes" type="text"/><br /><br />
+        <label for="Quadrant">Quadrant: </label><!--This field is required, need to double check with the models to see if that is required-->
+        <input id="Quadrant" type="text"/><br /><br />
 
-        <label for="Category">Choose a category:</label>
-
-        <select name="category" id="category">
-            <option value="Home">Home</option>
-            <option value="School">School</option>
-            <option value="Work">Work</option>
-            <option value="Church">Church</option>
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryTitle</option>
+            }
         </select>
 
         <br /><br />
 
 
-        <label for="completed">Completed (True/False): </label>
-        <input id="completed" type="number"/><br /><br />
+        <label for="Completed">Completed (True/False): </label>
+        <input id="Completed" type="number"/><br /><br />
 
         <input id="btnSend" type="submit" value="Add Task"/>
     </fieldset>
