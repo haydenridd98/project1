@@ -114,18 +114,17 @@ namespace project1.Controllers
                 return RedirectToAction("TaskList");
             }
 
-<<<<<<< Updated upstream
             else
             {
                 return View(ar);
             }
 
         }
-=======
+
         [HttpPost]
         public IActionResult Delete(ApplicationResponse ar)
         {
->>>>>>> Stashed changes
+
 
             arContext.responses.Remove(ar);
             arContext.SaveChanges();
