@@ -12,7 +12,6 @@ namespace project1.Controllers
     // PLEASE DON'T DELETE THIS FILE (looking at nobody in particular)
     // All Hail Hayden
     // all hail hayden Ridd
-    // I dropped off the candle at Hannahs, I am so anxious right now... ):
 
     public class HomeController : Controller
     {
