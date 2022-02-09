@@ -10,6 +10,9 @@ namespace project1.Controllers
 {
 
     // PLEASE DON'T DELETE THIS FILE (looking at nobody in particular)
+    // All Hail Hayden
+    // all hail hayden Ridd
+    // I dropped off the candle at Hannahs, I am so anxious right now... ):
 
     public class HomeController : Controller
     {
@@ -30,16 +33,19 @@ namespace project1.Controllers
 
         // we can add the other views right here
 
-
-
-
-
-
-        // privacy page
-        public IActionResult Privacy()
+        public IActionResult task()
         {
             return View();
         }
+
+        public IActionResult taskList()
+        {
+            return View();
+        }
+
+
+
+        //I deleted the Privacy Page. It didn't deserve to live. We don't believe in privacy. #IloveElon
 
 
         // in case of error

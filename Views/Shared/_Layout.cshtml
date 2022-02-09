@@ -13,19 +13,20 @@
 </head>
 <body style="text-align: center; background-color: lightblue">
 
-
-    <nav>
-        <a asp-controller="Blah" asp-action="Index">Home</a>
-        <a asp-controller="Blah" asp-action="task">Enter Task Information</a>
-    </nav>
-
+    <div style="text-align:right">
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Home" asp-action="task">Enter Task Information</a>
+            <a asp-controller="Home" asp-action="taskList">View Tasks</a>
+        </nav>
+    </div>
 
     <div>
         @RenderBody()
     </div>
 
 
-    <footer>Copyright Caden Karras</footer>
+    <footer>Copyright Team 3-11</footer>
 
     <script src="~/lib/jquery/jquery-3.6.0.min.js"></script>
     <script src="~/js/index.js"></script>
