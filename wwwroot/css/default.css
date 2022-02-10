@@ -91,3 +91,13 @@
 .callout {
     margin: 0;
 }
+
+@media screen and (max-width: 60em) {
+    .grid-5 {
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        -ms-grid-row: 4;
+        grid-row: 4;
+    }
+}

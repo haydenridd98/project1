@@ -1,5 +1,5 @@
 ﻿@{
-        ViewData["Title"] = "Task List";
+    ViewData["Title"] = "Task List";
 }
 
 @model List<ApplicationResponse>
@@ -27,7 +27,7 @@
 
     <tbody>
         @foreach (var x in Model)
-        { 
+        {
 
             <tr>
                 <td>@x.Task</td>
@@ -37,10 +37,10 @@
                 <td>@x.Completed</td>
 
 
-            <td><a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a></td>
-            <td><a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a></td>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a></td>
             </tr>
-         }
+        }
 
     </tbody>
 </table>
@@ -49,28 +49,105 @@
 
 
 
-<br /><br /><br /><br />
+<br />
+<br />
+<br />
+<br />
 
 
-<h1>Quadrants!</h1>
-
-<div class="container">
-    <div class="grid-1 callout primary" style="border-style: solid">
-        Quadrant 1
-    </div>
-
-    <div class="grid-2 callout warning" style="border-style: solid">
-        Quadrant 2
-    </div>
-
-    <div class="grid-3 callout alert" style="border-style: solid">
-        Quadrant 3
-    </div>
-
-    <div class="grid-4 callout success" style="border-style: solid">
-        Quadrant 4
-    </div>
+<!--<div style = "position:fixed; left:350px; top:470px; ">
+    <h2>Urgent</h2>
 </div>
 
+<div style="position:fixed; left:700px; top:470px; ">
+    <h1>Not Urgent</h1>
+</div>-->
 
+<div class="container">
+
+    <div class="grid-1" style="border-style: solid">
+        <h1><b><u>URGENT</u></b></h1>
+        <br />
+
+        <b>Quadrant 1</b>
+        <br />
+        @foreach (var x in Model)
+        {
+            @if (@x.Quadrant == 1 & @x.Completed == false)
+            {
+
+                <li>
+                    @x.Task <a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a>
+                <a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a>
+            </li>
+
+        }
+
+        }
+
+
+    </div>
+
+    <div class="grid-2" style="border-style: solid">
+        <h1><b><u>NOT URGENT</u></b></h1>
+        <br />
+        <b>Quadrant 2</b>
+        <br />
+        @foreach (var x in Model)
+        {
+            @if (@x.Quadrant == 2 & @x.Completed == false)
+            {
+
+                <li>
+                    @x.Task
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a>
+                </li>
+
+            }
+
+        }
+    </div>
+
+    <div class="grid-3" style="border-style: solid">
+        <b>Quadrant 3</b>
+        <br />
+        @foreach (var x in Model)
+        {
+            @if (@x.Quadrant == 3 & @x.Completed == false)
+            {
+
+                <li>
+                    @x.Task
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a>
+
+
+                </li>
+
+            }
+
+        }
+    </div>
+
+    <div class="grid-4" style="border-style: solid">
+        <b>Quadrant 4</b>
+        <br />
+        @foreach (var x in Model)
+        {
+            @if (@x.Quadrant == 4 & @x.Completed == false)
+            {
+
+                <li>
+                    @x.Task
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a>
+                </li>
+
+            }
+
+        }
+    </div>
+
+</div>
 
