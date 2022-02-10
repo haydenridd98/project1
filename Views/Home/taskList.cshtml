@@ -55,18 +55,14 @@
 <br />
 
 
-<!--<div style = "position:fixed; left:350px; top:470px; ">
-    <h2>Urgent</h2>
-</div>
+    
 
-<div style="position:fixed; left:700px; top:470px; ">
-    <h1>Not Urgent</h1>
-</div>-->
 
 <div class="container">
 
     <div class="grid-1" style="border-style: solid">
-        <h1><b><u>URGENT</u></b></h1>
+        <h1><b><u>URGENT AND IMPORTANT</u></b></h1>
+        <hr style="block-size: 5px; opacity: 1" />
         <br />
 
         <b>Quadrant 1</b>
@@ -78,18 +74,20 @@
 
                 <li>
                     @x.Task <a asp-controller="Home" asp-action="Edit" asp-route-TaskId="@x.TaskId">Edit</a>
-                <a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a>
-            </li>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskId="@x.TaskId">Delete</a>
+                </li>
 
-        }
+            }
 
         }
 
 
     </div>
-
+    
     <div class="grid-2" style="border-style: solid">
-        <h1><b><u>NOT URGENT</u></b></h1>
+        <h1><b><u>NOT URGENT BUT IMPORTANT</u></b></h1>
+        <hr style="block-size: 5px; opacity: 1" />
+
         <br />
         <b>Quadrant 2</b>
         <br />
@@ -110,6 +108,9 @@
     </div>
 
     <div class="grid-3" style="border-style: solid">
+        <h1><b><u>URGENT BUT NOT IMPORTANT</u></b></h1>
+        <hr style="block-size: 5px; opacity: 1" />        
+        <br />
         <b>Quadrant 3</b>
         <br />
         @foreach (var x in Model)
@@ -131,6 +132,9 @@
     </div>
 
     <div class="grid-4" style="border-style: solid">
+        <h1><b><u>NOT URGENT, NOT IMPORTANT</u></b></h1>
+        <hr style="block-size: 5px; opacity: 1" />        
+        <br />
         <b>Quadrant 4</b>
         <br />
         @foreach (var x in Model)

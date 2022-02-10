@@ -13,8 +13,7 @@ namespace project1.Controllers
 {
 
     // PLEASE DON'T DELETE THIS FILE (looking at nobody in particular)
-    // All Hail Hayden
-    // all hail hayden Ridd
+    
 
     public class HomeController : Controller
     {
@@ -33,9 +32,9 @@ namespace project1.Controllers
             return View();
         }
 
-        // we can add the other views right here
+      
 
-
+        // create a task
         [HttpGet]
         public IActionResult Task()
         {
@@ -63,6 +62,7 @@ namespace project1.Controllers
         }
 
 
+        // view the task list
         [HttpGet]
         public IActionResult TaskList()
         {
