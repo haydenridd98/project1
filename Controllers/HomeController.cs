@@ -52,7 +52,7 @@ namespace project1.Controllers
             {
                 arContext.Add(ar);
                 arContext.SaveChanges();
-                return View();
+                return View("Confirmation", ar);
             }
 
             else
